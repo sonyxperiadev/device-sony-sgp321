@@ -31,9 +31,9 @@ Put the following snippet in .repo/local_manifests/sgp321.xml
 ```
 
 Download the zip file with vendor binaries from:
-http://developer.sonymobile.com/downloads/tool/software-binaries-for-xperia-tablet-z/
+http://developer.sonymobile.com/downloads/tool/software-binaries-for-xperia-z-and-xperia-tablet-z/
 
-In the root of your Android code tree unzip the SW_binaries_for_Xperia_Z_v3.zip,
+In the root of your Android code tree unzip the SW_binaries_for_Xperia_Z_Xperia_Tablet_Z_v3.zip,
 you should now have a directory named vendor/sony/lagan and vendor/sony/sgp321 in your tree.
 
 * repo sync
