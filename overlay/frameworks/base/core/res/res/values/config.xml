@@ -18,6 +18,7 @@
 -->
 <resources>
     <bool name="config_voice_capable">false</bool>
+    <bool name="config_sms_capable">false</bool>
     <bool name="config_enable_emergency_call_while_sim_locked">false</bool>
     <integer name="config_lidOpenRotation">-1</integer>
     <integer name="config_lidKeyboardAccessibility">0</integer>
