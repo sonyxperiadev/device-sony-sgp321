@@ -30,7 +30,6 @@ PRODUCT_COPY_FILES += $(LOCAL_PATH)/$(TARGET_PREBUILT_KERNEL):kernel
 PRODUCT_PACKAGE_OVERLAYS += device/sony/sgp321/overlay
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=480 \
     fw.max_users=8 \
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
