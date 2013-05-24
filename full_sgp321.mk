@@ -21,55 +21,22 @@ PRODUCT_BRAND := Sony
 PRODUCT_MODEL := Full Android on SGP321
 PRODUCT_MANUFACTURER := Sony
 PRODUCT_LOCALES += hdpi
-PRODUCT_CHARACTERISTICS := tablet
-PRODUCT_PROPERTY_OVERRIDES := ro.sf.lcd_density=240
+PRODUCT_AAPT_CONFIG := normal hdpi
+PRODUCT_AAPT_PREF_CONFIG := hdpi
 
 TARGET_PREBUILT_KERNEL ?= kernel
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/$(TARGET_PREBUILT_KERNEL):kernel
 
-PRODUCT_PACKAGE_OVERLAYS += device/sony/sgp321/overlay
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/logo.rle:root/logo.rle \
+    $(LOCAL_PATH)/rootdir/system/etc/flashled_calc_parameters.cfg:system/etc/flashled_calc_parameters.cfg \
+    $(LOCAL_PATH)/rootdir/system/etc/sensors.conf:system/etc/sensors.conf \
 
 PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sf.lcd_density=240 \
     fw.max_users=8 \
 
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp
-
-PRODUCT_PACKAGES += \
-    p2p_supplicant.conf \
-
-ROOTDIR := $(LOCAL_PATH)/rootdir
-PRODUCT_COPY_FILES += \
-    $(ROOTDIR)/logo.rle:root/logo.rle \
-    $(ROOTDIR)/system/etc/flashled_calc_parameters.cfg:system/etc/flashled_calc_parameters.cfg \
-    $(ROOTDIR)/system/etc/sensors.conf:system/etc/sensors.conf \
-
-PRODUCT_AAPT_CONFIG := normal hdpi
-PRODUCT_AAPT_PREF_CONFIG := hdpi
-
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml
-
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
-    frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
-    frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
-    frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
-    frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
-    frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
-    frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:system/etc/permissions/android.hardware.sensor.gyroscope.xml \
-    frameworks/native/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
-    frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
-    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
-    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
-    frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
-    frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
-    frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
-    frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-    frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
-    frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.google.android.nfc_extras.xml \
-    frameworks/native/data/etc/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml \
-    frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
+PRODUCT_PACKAGE_OVERLAYS += device/sony/sgp321/overlay
 
 SOMC_CFG_SENSORS_LIGHT_LM3533 := yes
 SOMC_CFG_SENSORS_LIGHT_MAXRANGE := 1000
