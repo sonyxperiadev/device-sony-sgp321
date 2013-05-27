@@ -1,5 +1,4 @@
-#
-# Copyright 2013 The Android Open Source Project
+# Copyright (C) 2013 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,10 +11,9 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
-add_lunch_combo full_sgp311-eng
-add_lunch_combo full_sgp311-userdebug
-add_lunch_combo full_sgp311-user
-add_lunch_combo full_sgp321-eng
-add_lunch_combo full_sgp321-userdebug
-add_lunch_combo full_sgp321-user
+
+TARGET_PREBUILT_KERNEL=kernel.windy
+$(call inherit-product, device/sony/sgp321/full_sgp321.mk)
+
+PRODUCT_NAME := full_sgp311
+PRODUCT_MODEL := Full Android on SGP311
