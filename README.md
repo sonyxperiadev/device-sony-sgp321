@@ -1,7 +1,7 @@
 Copyright (C) Sony Mobile Communication 2013
 ============================================
 
-This is the Android device configuration for Xperia Tablet Z
+This is the Android device configuration for Xperia Tablet Z (SGP321 and SGP311)
 
 To setup a tree and build images for the device do the following:
 
@@ -36,8 +36,16 @@ http://developer.sonymobile.com/downloads/tool/software-binaries-for-xperia-z-an
 In the root of your Android code tree unzip the SW_binaries_for_Xperia_Z_Xperia_Tablet_Z_v3.zip,
 you should now have a directory named vendor/sony/lagan and vendor/sony/sgp321 in your tree.
 
+To build for SGP321:
+
 * repo sync
 * lunch full_sgp321-userdebug
+* make
+
+To build for SGP311:
+
+* repo sync
+* lunch full_sgp311-userdebug
 * make
 
 To flash the images produced make sure your device is unlocked, as described on
