@@ -41,12 +41,14 @@ You should now have directories named `vendor/sony/lagan` and `vendor/sony/sgp32
 To build for SGP321:
 
 * `repo sync`
+* `source ./build/envsetup.sh`
 * `lunch full_sgp321-userdebug`
 * `make`
 
 To build for SGP311:
 
 * `repo sync`
+* `source ./build/envsetup.sh`
 * `lunch full_sgp311-userdebug`
 * `make`
 
